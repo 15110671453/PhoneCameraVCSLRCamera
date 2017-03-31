@@ -1,0 +1,221 @@
+音视频封装格式、编码格式知识
+
+(自己整理了一下, 内容来源网络 !!)
+
+
+
+常见的AVI、RMVB、MKV、ASF、WMV、MP4、3GP、FLV等文件其实只能算是一种封装标准。
+
+一个完整的视频文件是由音频和视频2部分组成的。H264、Xvid等就是视频编码格式，MP3、AAC等就是音频编码格式。
+
+例如：将一个Xvid视频编码文件和一个MP3音频编码文件按AVI封装标准封装以后，就得到一个AVI后缀的视频文件，这个就是我们常见的AVI视频文件了。
+
+由于很多种视频编码文件、音频编码文件都符合AVI封装要求，则意味着即使是AVI后缀，也可能里面的具体编码格式不同。因此出现在一些设备上，同是AVI后缀文件，一些能正常播放，还有一些就无法播放。
+
+同样的情况也存在于其他容器格式。即使RMVB、WMV等也不例外。部分技术先进的容器还可以同时封装多个视频、音频编码文件，甚至同时封装进字幕，如MKV封装格式。MKV文件可以做到一个文件包括多语种发音、多语种字幕，适合不同人的需要。
+
+例如：MKV文件只要制作的时候同时加入国语和粤语发音的音轨和对应的简体、繁体字幕，播放的时候，你可以独立选择国语或粤语发音，并根据自己需要选择简体或繁体字幕，也可以选择不显示字幕。相当方便。
+
+因此，视频转换需要设置的本质就是：A设置需要的视频编码、B设置需要的音频编码、C选择需要的容器封装。一个完整的视频转换设置都至少包括了上面3个步骤。
+
+常用的有Xvid，H264，MPEG1，MPEG2。
+
+  Xvid：与RMVB格式差不多的压缩率，通用性很强，特别是用于家用DVD和便携式MP4等设备。
+
+  H264：压缩率最高的视频压缩格式，与其他编码格式相比，同等画面质量，文件体积最小，远远超过RMVB编码格式，电脑都可以播放，部分便携式视频设备也支持，如苹果播放器。PDA/PPC等设备也可以使用
+
+  MPEG1：其实就是VCD编码格式。
+
+  MPEG2：DVD编码格式。比MPEG1强，与MPEG1一样，已经落后的编码格式，压缩率都不高，编码后的文件体积大，多用于希望把网上下载的文件转换为VCD或DVD碟的时候。
+
+ 
+
+常见的组合方式：
+
+封装容器 视频流编码格式 音频流编码格式
+
+AVI ： Xvid  MP3
+
+AVI ： Divx  MP3
+
+Matroska（后缀就是MKV）： Xvid  MP3
+
+Matroska（后缀就是MKV）： Xvid  AAC
+
+Matroska（后缀就是MKV）： H264  AAC
+
+MP4  ： Xvid  MP3
+
+MP4 ：  H264  AAC
+
+3GP  ： H.263  AAC
+
+事实上，很多封装容器对音频编码和视频编码的组合方式放的很开，如AVI还可以使用H264+AAC组合，可以在具体使用中自己体会。尤其是MKV封装容器，基本无论什么样的组合都可以！但一般MKV用的最多的就是H264+AAC组合，此组合文件体积最小，清晰度最高。因此网上很多MKV视频都是高清晰度的。
+
+从上表格可以看出，真正设置的重点在于音频编码和视频编码，封装容器多数时候只是关系到最后的文件后缀而已。起码初学者可以就这么理解。
+
+ 
+
+音视频编码格式汇总
+
+一、音频编解码格式 
+*MPEG Audio Layer 1/2 
+*MPEG Audio Layer 3(MP3) 
+*MPEG2 AAC 
+*MPEG4 AAC 
+*Windows Media audeo v1/v2/7/8/9 
+*RealAudio cook/sipro(real media series) 
+*RealAudio AAC/AACPlus(real media series) 
+*QDesign Music 2(apple series) 
+是QDesign 公司开发的用于高保真高压缩率的编码方式，类似于MP3，不过比MP3要先进。支持流式播放.
+*Apple MPEG-4 AAC(apple series) 
+*ogg(ogg vorbis音频) 
+*AC3(DVD 专用音频编码) 
+*DTS(DVD 专用音频编码) 
+*APE(monkey’s 音频) 
+*AU(sun 格式) 
+*FLAC(fress lossless 音频) 
+*M4A(mpeg-4音频)（苹果改用的名字，可以改成.mp4） 
+*MP2(mpeg audio layer2音频) 
+*WMA 
+二、视频编解码格式 
+*MPEG1(VCD) 
+*MPEG2(DVD) 
+*MPEG4(divx,xvid)
+*MPEG4 AVC/h.264 
+*h.261 
+*h.262 
+*h.263 
+*h.263+ 
+*h.263++ 
+*MPEG-4 v1/v2/v3(微软windows media系列) 
+*Windows Media Video 7/8/9/10 
+*Sorenson Video 3（用于QT5，成标准了）(appleseries) 
+*RealVideo G2(real media series) 
+*RealVideo 8/9/10(real media series) 
+*Apple MPEG-4(apple series) 
+*Apple H.264(apple series) 
+*flash video
+
+
+三、音视频文件格式 
+  首先要分清楚媒体文件和编码的区别：文件是既包括视频又包括音频、甚至还带有脚本的一个集合，也可以叫容器；文件当中的视频和音频的压缩算法才是具体的编码。 
+*AVI :音视频交互存储，最常见的音频视频容器。支持的视频音频编码也是最多的
+
+
+*MPG :MPEG编码采用的音频视频容器，具有流的特性。里面又分为 PS，TS 等，PS 主要用于 DVD 存储，TS 主要用于 HDTV。
+
+
+*VOB :DVD采用的音频视频容器格式（即视频MPEG-2，音频用AC3或者DTS），支持多视频多音轨多字幕章节等。
+
+
+*MP4 :MPEG-4编码采用的音频视频容器，基于 QuickTime MOV 开发，具有许多先进特性。
+
+
+*3GP : 3GPP视频采用的格式，主要用于流媒体传送。
+
+
+*ASF :Windows Media采用的音频视频容器，能够用于流传送，还能包容脚本等。
+
+
+*RM : RealMedia 采用的音频视频容器，用于流传送。 
+*MOV : QuickTime 的音频视频容器，恐怕也是现今最强大的容器，甚至支持虚拟现实技术，Java 等，它的变种 MP4,3GP都没有这么厉害。 
+*MKV :MKV 它能把 Windows Media Video，RealVideo，MPEG-4 等视频音频融为一个文件，而且支持多音轨，支持章节字幕等。
+
+
+*WAV :一种音频容器（注意：只是音频），大家常说的 WAV 就是没有压缩的 PCM 编码，其实 WAV 里面还可以包括 MP3 等其他ACM 压缩编码。
+
+
+四、以文件名标识识别音频编码格式 
+*.aac 
+音频编码：aac 
+*.ac3 
+音频编码：ac3 
+*.ape 
+*.au 
+音频编码：pcm_s16be 
+*.m4a 
+音频编码：mpeg4 aac 
+*.mp2 
+*.mp3 
+*.ogg 
+音频编码：vorbis 
+*.wav 
+音频编码：pcm_s16le 
+*.flav 
+*.wma 
+音频编码：wma7x
+
+
+五、以文件名标识识别音视频编码格式 
+1．*.MP4 (MP4 MPEG-4视频) 
+视频编码：mpeg4 
+音频编码：mpeg4 aac 
+２．*.3gp (3GPP 第三代合作项目)
+视频编码：mpeg4 
+音频编码：amr_nb((mono, 8000 Hz, Sample Depth 16 bit,bitrate 12 kbps) 
+３．*.3g2 (3GPP 第三代合作项目2) 
+视频编码：mpeg4 
+音频编码：mpeg4 aac 
+4．*.asf (ASF 高级流格式) 
+视频编码：msmpeg4 
+音频编码：mp3 
+5．*.avi（AVI 音视频交错格式） 
+视频编码：mpeg4 
+音频编码：pcm_s161e 
+6．*.avi （divx 影片） 
+视频编码：mpeg4 
+音频编码：mp3 
+7．*.avi（xvid 视频） 
+视频编码：Xvid 
+音频编码：mp3 
+8．*.vob （DVD） 
+视频编码：mpeg2 video 
+音频编码：ac3 
+9．*.flv (flash 视频格式) 
+视频编码： 
+音频编码：mp3 
+10．*.mp4(iPod 320*240 MPEG-4 视频格式) 
+视频编码：mpeg4 
+音频编码：mpeg4 aac 
+11．*.mp4(iPod video2 640*480 MPEG-4 视频格式) 
+视频编码：mpeg4 
+音频编码：mpeg4 aac 
+12．*.mov (MOV 苹果quicktime 格式) 
+视频编码：mpeg4_qt 
+音频编码：mpeg4 aac_qt 
+13．*.mpg （mpeg1影片） 
+视频编码：mpeg1 video 
+音频编码：mp2 
+14．*.mpg （mpeg2 影片） 
+视频编码：mpeg2 video 
+音频编码：mp2 
+15．*.mp4（mpeg4 avc 视频格式） 
+视频编码：h.264 
+音频编码：mpeg4 aac 
+16．*.mp4 （PSP mpeg4 影片） 
+视频编码：Xvid 
+音频编码：mpeg4 aac 
+17．*.mp4 （PSP AVC 视频格式） 
+视频编码：h.264 
+音频编码：mpeg4 aac 
+18．*.rm （RM realvideo） 
+视频编码：rv10 
+音频编码：ac3 
+19．*.mpg (超级VCD) 
+视频编码：mpeg2 video 
+音频编码：mp2 
+20．*.swf (SWF 格式) 
+视频编码： 
+音频编码：mp3 
+21．*.mpg （video CD 格式） 
+视频编码：mpeg1 video 
+音频编码：mp2 
+22．*.vob （mpeg2 ps格式） 
+视频编码：mpeg2 video 
+音频编码：ac3 
+23．*.wmv（windows 视频格式） 
+视频编码：wmv3x 
+音频编码：wma7x
+
+ 
